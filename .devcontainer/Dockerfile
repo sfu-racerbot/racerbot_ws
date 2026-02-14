@@ -15,5 +15,9 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
 ENV SHELL=/bin/bash
+
+RUN mkdir -p /racerbot_ws && chown -R $USERNAME:$USERNAME /racerbot_ws
+
 USER $USERNAME
+WORKDIR /racerbot_ws
 CMD ["/bin/bash"]
