@@ -1,0 +1,43 @@
+{
+    "name": "Racerbot",
+    "privileged": true,
+    "remoteUser": "rosdev",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "rosdev"
+        }
+    },
+    "workspaceFolder": "/racerbot_ws",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/racerbot_ws,type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-themes",
+                "twxs.cmake",
+                "donjayamanne.python-extension-pack",
+                "eamodio.gitlens",
+                "ms-iot.vscode-ros"
+            ]
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "unix:0",
+        "ROS_LOCALHOST_ONLY": "1",
+        "ROS_DOMAIN_ID": "42"
+    },
+    "runArgs": [
+        "--net=host",
+        "--pid=host",
+        "--ipc=host",
+        "-e", "DISPLAY=${env:DISPLAY}"
+    ],
+    "mounts": [
+        "source=${localWorkspaceFolder}/src,target=/racerbot_ws/src,type=bind",
+        "source=racerbot_ws_build,target=/racerbot_ws/build,type=volume",
+        "source=racerbot_ws_install,target=/racerbot_ws/install,type=volume",
+        "source=racerbot_ws_log,target=/racerbot_ws/log,type=volume",
+    ],
+    "postCreateCommand": "sudo rosdep update && rosdep install --from-paths src --ignore-src -y"
+}
