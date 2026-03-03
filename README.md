@@ -4,12 +4,19 @@ The official SFU Racerbot Workspace with solutions to the RoboRacer labs and all
 
 ## How to Run
 If you have already built your container just run: `docker start -ai racerbot`
-1. Go into the `racerbot_ws` directory. 
-2. Build the image:
+1. Clone the workspace (ideally in your racerbot folder to keep organized):
+    ```
+    git clone https://github.com/sfu-racerbot/racerbot_ws.git
+    ```
+2. Go into the `racerbot_ws` directory.
+    ```
+    cd racerbot_ws
+    ```
+3. Build the image:
     ```
     docker build -f .devcontainer/Dockerfile -t racerbot .
     ```
-3. Run:
+4. Run:
     ```
     docker run -it \
     --name racerbot \
@@ -20,13 +27,13 @@ If you have already built your container just run: `docker start -ai racerbot`
     -v racerbot_ws_log:/racerbot_ws/log \
     racerbot
     ```
-4. Update dependencies:
+5. Update dependencies:
     ```bash
     cd /racerbot_ws
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
     ```
-5. Build the workspace and source the overlay:
+6. Build the workspace and source the overlay:
     ```bash
     cd /racerbot_ws
     colcon build
