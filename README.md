@@ -16,7 +16,9 @@ If you have already built your container just run: `docker start -ai racerbot`
     ```
     docker build -f .devcontainer/Dockerfile -t racerbot .
     ```
-4. Run:
+4. Run the container:
+
+    If you are on Linux/MacOS:
     ```
     docker run -it \
     --name racerbot \
@@ -27,6 +29,20 @@ If you have already built your container just run: `docker start -ai racerbot`
     -v racerbot_ws_log:/racerbot_ws/log \
     racerbot
     ```
+
+    If you are on Windows:
+    ```
+    docker run -it `
+    --name racerbot `
+    -p 127.0.0.1:8765:8765 `
+    -v "${PWD}/src:/racerbot_ws/src" `
+    -v racerbot_ws_build:/racerbot_ws/build `
+    -v racerbot_ws_install:/racerbot_ws/install `
+    -v racerbot_ws_log:/racerbot_ws/log `
+    racerbot
+    ```
+    
+
 5. Update dependencies:
     ```bash
     cd /racerbot_ws
