@@ -46,6 +46,7 @@ If you have already built your container just run: `docker start -ai racerbot`
 5. Update dependencies:
     ```bash
     cd /racerbot_ws
+    sudo apt update && sudo apt upgrade -y
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
     ```

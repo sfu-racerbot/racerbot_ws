@@ -16,7 +16,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 ENV SHELL=/bin/bash
 
-RUN mkdir -p /racerbot_ws && chown -R $USERNAME:$USERNAME /racerbot_ws
+RUN mkdir -p /racerbot_ws/log /racerbot_ws/build /racerbot_ws/install /racerbot_ws/src \
+    && chown -R $USERNAME:$USERNAME /racerbot_ws
 
 USER $USERNAME
 WORKDIR /racerbot_ws
