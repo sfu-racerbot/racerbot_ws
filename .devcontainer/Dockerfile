@@ -14,6 +14,11 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
+# Enable the ROS2 Testing Repo for the ros-humble-foxglove-bridge package
+RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2-testing/ubuntu jammy main" | tee /etc/apt/sources.list.d/ros2-testing.list
+RUN apt update
+
 ENV SHELL=/bin/bash
 
 RUN mkdir -p /racerbot_ws/log /racerbot_ws/build /racerbot_ws/install /racerbot_ws/src \
