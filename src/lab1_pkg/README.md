@@ -8,12 +8,13 @@
 ## Run
 Make sure the package is built in your ROS 2 workspace:
 ```
+cd /racerbot_ws
 colcon build --packages-select lab1_pkg
 source install/setup.bash
 ```
 1. Run nodes with a launch file:
 ```
-ros2 launch lab1_pkg launch.py
+ros2 launch lab1_pkg lab1_launch.py
 ```
 2. Or run nodes individually:
 ```
