@@ -3,7 +3,7 @@
 <package format="3">
   <name>lab1_pkg</name>
   <version>0.0.0</version>
-  <description>Lab 1 package for RoboRacer with talker and relay nodes</description>
+  <description>Lab 1 package for Racerbot with talker and relay nodes</description>
   <maintainer email="sfuracerbot@gmail.com">SFU Racerbot</maintainer>
   <license>MIT</license>
 

@@ -11,11 +11,14 @@ Make sure the package is built in your ROS 2 workspace:
 colcon build --packages-select lab1_pkg
 source install/setup.bash
 ```
-Run nodes individually or with a launch file:
+1. Run nodes with a launch file:
+```
+ros2 launch lab1_pkg launch.py
+```
+2. Or run nodes individually:
 ```
 ros2 run lab1_pkg talker
 ros2 run lab1_pkg relay
-ros2 launch lab1_pkg launch.py
 ```
 
 ## Parameters
