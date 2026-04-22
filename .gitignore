@@ -15,4 +15,3 @@ __pycache__/
 
 # Packages to be installed by user
 src/f1tenth_gym_ros/
-src/safety_node/
