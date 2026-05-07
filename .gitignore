@@ -13,6 +13,6 @@ log/
 __pycache__/
 *.pyc
 
-# Packages to be installed by user
+# External repositories to clone into src/
 src/f1tenth_gym_ros/
-src/safety_node/
+src/racerbot_solutions/
