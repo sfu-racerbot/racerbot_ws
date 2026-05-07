@@ -57,7 +57,7 @@ If you have already built your container just run: `docker start -ai racerbot`
     source install/setup.bash
     ```
 
-## Adding external repositories
+## Adding External Repositories
 This workspace is designed for cloning packages into `racerbot_ws/src`.
 
 ### F1TENTH gym environment ROS 2 communication bridge
