@@ -1,6 +1,6 @@
 # Racerbot Workspace
 
-The official SFU Racerbot Workspace with solutions to the RoboRacer labs and all other learning projects.
+Racerbot Workspace is a ROS 2 workspace designed as a universal environment for creating your own packages and integrating external ROS 2 packages.
 
 ## How to Run
 If you have already built your container just run: `docker start -ai racerbot`
@@ -57,6 +57,15 @@ If you have already built your container just run: `docker start -ai racerbot`
     source install/setup.bash
     ```
 
+## Adding External Repositories
+This workspace is designed for cloning packages into `racerbot_ws/src`.
+
+### F1TENTH gym environment ROS 2 communication bridge
+To add and run the simulator in this workspace follow these [instructions](https://github.com/Milad244/racerbot-docs/blob/main/resources/F1TENTH_GYM_ROS.md).
+
+### Racerbot Solutions
+For the solutions to the RoboRacer labs and other learning projects clone the repository [Racerbot Solutions](https://github.com/sfu-racerbot/racerbot_solutions).
+
 ## VSCode
 If you want a smooth VSCode workflow and intellisense for ROS 2 follow these instructions:
 1. Install these extensions in VSCode:
@@ -72,6 +81,3 @@ If you want a smooth VSCode workflow and intellisense for ROS 2 follow these ins
     - **Not recommended**: Creating a new container with “Open Folder in Container” or “Reopen in Container”. This will build a fresh container instead of using your existing one.
 3. Redownload your extensions (if they didn't follow) in your VSCode container environment.
 4. Make sure you have your ROS 2 packages downloaded (using `rosdep`) whenever you use a new package. This will ensure the intellisense works for it.
-
-## F1TENTH gym environment ROS2 communication bridge
-To add and run the simulator in this workspace follow these [instructions](https://github.com/Milad244/racerbot-docs/blob/main/resources/F1TENTH_GYM_ROS.md)
